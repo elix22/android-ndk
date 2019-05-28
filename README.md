@@ -3,9 +3,32 @@ NDK Samples [![Build Status](https://travis-ci.org/googlesamples/android-ndk.svg
 
 This repository contains [Android NDK][0] samples with Android Studio [C++ integration](https://www.youtube.com/watch?v=f7ihSQ44WO0&feature=youtu.be).
 
-These samples uses the new [Gradle Experimental Android plugin](http://tools.android.com/tech-docs/new-build-system/gradle-experimental) with C++ support.
+These samples use the new [CMake Android plugin](https://developer.android.com/studio/projects/add-native-code.html) with C++ support.
+
+Samples could also be built with other build systems:
+- for ndk-build with Android Studio, refer to directory [other-builds/ndkbuild](https://github.com/googlesamples/android-ndk/tree/master/other-builds/ndkbuild)
+- for gradle-experimental plugin, refer to directory other-builds/experimental. Note that gradle-experimental does not work with unified headers yet: use NDK version up to r15 and Android Studio up to version 2.3. When starting new project, please use CMake or ndk-build plugin.
+
+Additional Android Studio samples:    
+- [Google Play Game Samples with Android Studio](https://github.com/playgameservices/cpp-android-basic-samples)
+- [Google Android Vulkan Tutorials](https://github.com/googlesamples/android-vulkan-tutorials)
+- [Android Vulkan API Basic Samples](https://github.com/googlesamples/vulkan-basic-samples)
+- [Android High Performance Audio](https://github.com/googlesamples/android-audio-high-performance)	
+
+Documentation
+- [Add Native Code to Your Project](https://developer.android.com/studio/projects/add-native-code.html)
+- [CMake for NDK](https://developer.android.com/ndk/guides/cmake.html)
+- [Hello-CMake Codelab](https://codelabs.developers.google.com/codelabs/android-studio-cmake/index.html)
+
+Known Issues
+- Some are documented at [Android Studio](http://tools.android.com/knownissues) page
 
 For samples using `Android.mk` build system with `ndk-build` see the [android-mk](https://github.com/googlesamples/android-ndk/tree/android-mk) branch.
+
+Build Steps
+----------
+- With Android Studio: "Open An Existing Android Studio Project" or "File" > "Open", then navigate to & select project's build.gradle file.
+- On Command Line: set up ANDROID_HOME and ANDROID_NDK_HOME to your SDK and NDK path, cd to individual sample dir, and do "gradlew assembleDebug"
 
 Support
 -------
@@ -21,7 +44,7 @@ submitting a pull request through GitHub. Please see [CONTRIBUTING.md](CONTRIBUT
 License
 -------
 
-Copyright 2015 The Android Open Source Project, Inc.
+Copyright 2018 The Android Open Source Project, Inc.
 
 Licensed to the Apache Software Foundation (ASF) under one or more contributor
 license agreements.  See the NOTICE file distributed with this work for
